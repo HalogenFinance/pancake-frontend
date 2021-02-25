@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Heading, Text, Skeleton, dark } from 'toastswapuikit'
+import { Card, CardBody, Heading, Skeleton, Text, dark } from '@pancakeswap-libs/uikit'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
@@ -25,8 +25,7 @@ const CakeStats = () => {
   const TranslateString = useI18n()
   const totalSupply = useTotalSupply()
   const burnedBalance = useBurnedBalance(getCakeAddress())
-  const cakeSupply = totalSupply ? getBalanceNumb : 0
-
+  const cakeSupply = totalSupply ? getBalanceNumber(totalSupply) - getBalanceNumber(burnedBalance) : 0
   const data = useGetStats()
   const tvl = data ? data.total_value_locked_all.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
 

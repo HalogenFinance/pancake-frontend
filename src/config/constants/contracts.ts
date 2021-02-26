@@ -1,7 +1,7 @@
 export default {
   cake: {
     97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
-    56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+    56: '0x8f5ab78E354a859e4eE8524A3FE5be402378E128',
   },
   syrup: {
     97: '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',

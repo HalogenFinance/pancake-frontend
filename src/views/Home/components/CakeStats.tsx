@@ -51,7 +51,7 @@ const CakeStats = () => {
           <Text fontSize="14px" theme={dark}>
             {TranslateString(540, 'New TOAST/block')}
           </Text>
-          <CardValue fontSize="14px" color="#fff" decimals={0} value={25} />
+          <CardValue fontSize="14px" color="#fff" decimals={0} value={1} />
         </Row>
 
         <Heading marginTop="50px" size="lg" mb="24px" theme={dark}>

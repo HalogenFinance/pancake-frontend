@@ -5,7 +5,7 @@ import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
 import { getCakeAddress } from 'utils/addressHelpers'
-import { useGetStats } from 'hooks/api'
+import { useGetStats, useGetPriceData } from 'hooks/api'
 import CardValue from './CardValue'
 
 const StyledCakeStats = styled(Card)`
@@ -27,6 +27,9 @@ const CakeStats = () => {
   const burnedBalance = useBurnedBalance(getCakeAddress())
   const cakeSupply = totalSupply ? getBalanceNumber(totalSupply) - getBalanceNumber(burnedBalance) : 0
   const data = useGetStats()
+  const priceData = useGetPriceData()
+  const toastPriceUsd = priceData ? Number(priceData.prices.TOAST) : undefined
+
   const tvl = data ? data.total_value_locked_all.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
 
   return (
@@ -54,19 +57,7 @@ const CakeStats = () => {
           <CardValue fontSize="14px" color="#fff" decimals={0} value={1} />
         </Row>
 
-        <Heading marginTop="50px" size="lg" mb="24px" theme={dark}>
-          {TranslateString(762, 'Total Value Locked (TVL)')}
-        </Heading>
-        {data ? (
-          <>
-            <Heading size="xl" theme={dark}>{`$${tvl}`}</Heading>
-            <Text color="textSubtle">{TranslateString(764, 'Across all LPs and Pools')}</Text>
-          </>
-        ) : (
-          <>
-            <Skeleton height={66} />
-          </>
-        )}
+       
       </CardBody>
     </StyledCakeStats>
   )

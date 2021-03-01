@@ -5,14 +5,21 @@ import { allLanguages } from 'config/localisation/languageCodes'
 import { LanguageContext } from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
 import { usePriceCakeBusd, useProfile } from 'state/hooks'
+import { useGetPriceData } from 'hooks/api'
 import config from './config'
 
 const Menu = (props) => {
   const { account, connect, reset } = useWallet()
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
   const { isDark, toggleTheme } = useTheme()
-  const cakePriceUsd = usePriceCakeBusd()
+  
+  const priceData = useGetPriceData()
+  const cakePriceUsd = priceData ? Number(priceData.prices.TOAST) : undefined
+ 
+
   const { profile } = useProfile()
+
+  
 
   return (
     <UikitMenu
@@ -24,7 +31,7 @@ const Menu = (props) => {
       currentLang={selectedLanguage && selectedLanguage.code}
       langs={allLanguages}
       setLang={setSelectedLanguage}
-      cakePriceUsd={cakePriceUsd.toNumber()}
+      cakePriceUsd={cakePriceUsd}
       links={config}
       {...props}
     />

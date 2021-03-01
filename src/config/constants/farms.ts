@@ -6,12 +6,12 @@ const farms: FarmConfig[] = [
     pid: 0,
     lpSymbol: 'CAKE',
     lpAddresses: {
-      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      97: '',
       56: '0x8f5ab78E354a859e4eE8524A3FE5be402378E128',
     },
     tokenSymbol: 'SYRUP',
     tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      97: '',
       56: '0x8f5ab78E354a859e4eE8524A3FE5be402378E128',
     },
     quoteTokenSymbol: QuoteToken.BNB,
@@ -21,16 +21,64 @@ const farms: FarmConfig[] = [
     pid: 1,
     lpSymbol: 'CAKE-BNB LP',
     lpAddresses: {
-      97: '0xe70b7523f4bffa1f2e88d2ba709afd026030f412',
+      97: '',
       56: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
     },
     tokenSymbol: 'CAKE',
     tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      97: '',
       56: '0x8f5ab78E354a859e4eE8524A3FE5be402378E128',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+  },
+  {
+    pid: 81,
+    lpSymbol: 'IOTX-BUSD LP',
+    lpAddresses: {
+      97: '',
+      56: '0x36b8b28d37f93372188f2aa2507b68a5cd8b2664',
+    },
+    tokenSymbol: 'IOTX',
+    tokenAddresses: {
+      97: '',
+      56: '0x9678e42cebeb63f23197d726b29b1cb20d0064e5',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+    isCommunity: false,
+  },
+  {
+    pid: 80,
+    lpSymbol: 'BOR-BNB LP',
+    lpAddresses: {
+      97: '',
+      56: '0x86e650350c40a5178a5d014ba37fe8556232b898',
+    },
+    tokenSymbol: 'BOR',
+    tokenAddresses: {
+      97: '',
+      56: '0x92d7756c60dcfd4c689290e8a9f4d263b3b32241',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    isCommunity: false,
+  },
+  {
+    pid: 79,
+    lpSymbol: 'bOPEN-BNB LP',
+    lpAddresses: {
+      97: '',
+      56: '0x9d8b7e4a9d53654d82f12c83448d8f92732bc761',
+    },
+    tokenSymbol: 'bOPEN',
+    tokenAddresses: {
+      97: '',
+      56: '0xF35262a9d427F96d2437379eF090db986eaE5d42',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    isCommunity: false,
   },
   {
     pid: 78,
@@ -1171,7 +1219,7 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
-  },
+  }
 ]
 
 export default farms

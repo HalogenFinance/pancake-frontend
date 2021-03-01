@@ -27,6 +27,16 @@ export interface ApiStatResponse {
   }
 }
 
+export interface ApiResponse {
+  prices: {
+    [key: string]: string
+  }
+  update_at: string
+}
+
+
+
+
 export const useGetStats = () => {
   const [data, setData] = useState<ApiStatResponse | null>(null)
 
@@ -47,3 +57,25 @@ export const useGetStats = () => {
 
   return data
 }
+
+
+export const useGetPriceData = () => {
+  const [data, setData] = useState<ApiResponse | null>(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${baseUrl}/price`)
+        const res: ApiResponse = await response.json()
+
+        setData(res)
+      } catch (error) {
+        console.error('Unable to fetch price data:', error)
+      }
+    }
+
+    fetchData()
+  }, [setData])
+
+  return data
+} 

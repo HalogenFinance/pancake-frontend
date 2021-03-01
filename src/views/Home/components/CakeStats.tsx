@@ -54,19 +54,7 @@ const CakeStats = () => {
           <CardValue fontSize="14px" color="#fff" decimals={0} value={1} />
         </Row>
 
-        <Heading marginTop="50px" size="lg" mb="24px" theme={dark}>
-          {TranslateString(762, 'Total Value Locked (TVL)')}
-        </Heading>
-        {data ? (
-          <>
-            <Heading size="xl" theme={dark}>{`$${tvl}`}</Heading>
-            <Text color="textSubtle">{TranslateString(764, 'Across all LPs and Pools')}</Text>
-          </>
-        ) : (
-          <>
-            <Skeleton height={66} />
-          </>
-        )}
+       
       </CardBody>
     </StyledCakeStats>
   )

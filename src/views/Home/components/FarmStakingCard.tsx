@@ -64,7 +64,7 @@ const FarmedStakingCard = () => {
         </Block>
         <Block>
           <Label>{TranslateString(546, 'TOAST in Wallet')}:</Label>
-         
+    
         </Block>
         <Actions>
           {account ? (

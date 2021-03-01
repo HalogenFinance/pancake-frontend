@@ -19,7 +19,17 @@ const config: MenuEntry[] = [
         href: 'https://exchange.toastfinance.com/#/pool',
       },
     ],
-  }
+  },
+  {
+    label: 'Farms',
+    icon: 'FarmIcon',
+    href: '/farms',
+  },
+  {
+    label: 'Pools',
+    icon: 'PoolIcon',
+    href: '/pools',
+  },
 ]
 
 export default config
